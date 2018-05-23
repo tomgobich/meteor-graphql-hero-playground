@@ -1,0 +1,112 @@
+html,
+body,
+body > div {
+  height: 100%;
+}
+
+%flex-y-center {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header {
+  @apply .bg-black .px-8;
+  position: relative;
+
+  nav {
+    @apply .text-xs;
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    text-transform: uppercase;
+
+    a {
+      @extend %flex-y-center;
+      justify-content: center;
+      color: config('colors.grey-lightest');
+      cursor: pointer;
+      text-decoration: none;
+      padding-right: .85rem;
+      padding-left: .85rem;
+      position: relative;
+      transition: background-color 300ms ease, box-shadow 300ms ease;
+
+      &:after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background-color: config('colors.green-light');
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transition: width 300ms ease;
+      }
+
+      &:hover,
+      &.is-active {
+        @apply .shadow-inner;
+        background-color: rgba(255, 255, 255, 0.06);
+
+        &:after {
+          width: 100%;
+        }
+      }
+
+      ion-icon {
+        margin-top: -2px;
+      }
+
+      ion-icon .icon-inner,
+      ion-icon svg {
+        width: 1.3em;
+        height: 1.3em;
+      }
+    }
+  }
+}
+
+@media (max-width: config('screens.md')) {
+  header nav.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: calc(100vh - 56px);
+    max-height: 0;
+    background-color: config('colors.grey-darkest');
+    overflow: hidden;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    will-change: max-height;
+    transition: max-height 300ms ease;
+
+    &.is-active {
+      max-height: 9999px;
+    }
+
+    a {
+      @apply .pl-8 .py-4;
+      width: 100%;
+      height: auto;
+      justify-content: flex-start;
+
+      &:first-of-type {
+        margin-top: 12px;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.logo-link {
+  @extend %flex-y-center;
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+}

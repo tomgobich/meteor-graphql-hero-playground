@@ -1,0 +1,131 @@
+.hero {
+  min-height: calc(100vh - 56px);
+  background-image: linear-gradient(to bottom right, config('colors.teal'), config('colors.green'));
+  position: relative;
+  overflow: hidden;
+
+  &-content {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    h1 {
+      @apply .text-xl .text-white .mb-4;
+    }
+
+    p {
+      @apply .text-green-lightest .mb-6;
+    }
+
+    button {
+      width: 200px;
+    }
+  }
+}
+
+@screen md {
+  .hero-content {
+    height: 100%;
+
+    h1 {
+      @apply .text-5xl;
+    }
+
+    p {
+      @apply .text-2xl;
+    }
+
+    button {
+      width: 250px;
+    }
+  }
+}
+
+@screen lg {
+  .hero-content {
+    width: 70%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.hero-grid {
+  width: 100%;
+  transform-style: preserve-3d;
+  perspective: 750px;
+  padding: 1rem 0 6rem;
+  position: relative;
+  top: 0;
+  right: 0;
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    transform: rotateY(-32deg);
+    transform-style: preserve-3d;
+
+    > div {
+      width: 33%;
+      padding: 5px;
+      transform-style: preserve-3d;
+
+      &:nth-child(3n-8) img {
+        mask-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+      }
+
+      &:nth-child(-n + 6) {
+        display: none;
+      }
+
+      img {
+        display: block;
+        will-change: transform;
+        transition: box-shadow 300ms ease, transform 300ms ease;
+
+        &:hover {
+          transform: translateZ(30px);
+          box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
+
+@screen lg {
+  .hero {
+    height: calc(100vh - 56px);
+  }
+
+  .hero-grid {
+    width: 60%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px;
+    opacity: .6;
+
+    > div {
+      transform: rotateY(-32deg) translateY(-6%);
+    }
+
+    > div > div {
+      &:nth-child(-n + 6) {
+        display: block;
+      }
+    }
+  }
+}
+
+@screen xl {
+  .hero-grid {
+    opacity: 1;
+  }
+}

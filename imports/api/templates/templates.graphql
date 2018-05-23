@@ -1,0 +1,22 @@
+# user_id
+# status_id
+# category_id
+
+# title
+# slug
+# description
+# template_path
+# download_count
+# view_count
+# tags
+# photos
+
+# published_at
+# created_at
+# updated_at
+# deleted_at
+
+type Template {
+  _id: String!
+  title: String!
+}
