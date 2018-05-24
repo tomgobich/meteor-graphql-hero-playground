@@ -5,9 +5,15 @@
   text-transform: uppercase;
 
   &-primary {
-    background-image: linear-gradient(to bottom right, config('colors.blue-dark'), config('colors.blue-light'));
+    background-image: linear-gradient(to bottom right, rgba(#0cebeb, .8), rgba(#20e3b2, .8) rgba(#29ffc6, .8));
     box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
     color: config('colors.blue-lightest');
+    transition: box-shadow 300ms ease, transform 300ms ease;
+
+    &:hover {
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      transform: translateY(-3px);
+    }
   }
 }
 

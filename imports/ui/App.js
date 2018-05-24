@@ -13,15 +13,15 @@ const App = ({ loading, templates = [] }) => {
         <div className='hero-content px-8'>
           <h1>Thumbnails Without Hassel</h1>
           <p>
-            Find the next thumbnail for your blog, video, or series.&nbsp;
+            Find the next thumbnail for your blog, video, or series with
             <br className='hidden md:block' />
-            Free unlimited downloads, forever!
+            free unlimited downloads, forever!
           </p>
           <button className='btn btn-primary'>Start Browsing</button>
         </div>
         <div className='hero-grid'>
           <div id='parallaxed' data-depth='0.2'>
-            {[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ].map(() => (
+            {[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ].map(() => (
               <div>
                 <img src='https://placehold.it/1280x720' />
               </div>
