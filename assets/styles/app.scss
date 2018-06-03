@@ -1,7 +1,10 @@
+@import '../fonts/opticular/stylesheet';
+
 @tailwind preflight;
 
 @import 'layout';
 @import 'button';
+@import 'home';
 @import 'hero';
 
 @tailwind utilities;

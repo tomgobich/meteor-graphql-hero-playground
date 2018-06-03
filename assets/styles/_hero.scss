@@ -1,7 +1,8 @@
 .hero {
   min-height: calc(100vh - 56px);
   background-color: config('colors.black');
-  background-image: linear-gradient(to bottom right, rgba(#1fa2ff, .8), rgba(#12d8fa, .7), rgba(#a6ffcb, .8));
+  background-image: linear-gradient(to bottom right, #24c6dc, #514a9d);
+  box-shadow: -8px 0 32px 0 rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
 
@@ -12,30 +13,29 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    z-index: 10;
     padding-top: 4rem;
     padding-bottom: 4rem;
 
     h1 {
-      @apply .text-xl .text-blue-lightest .mb-3;
+      @apply .text-2xl .text-blue-lightest .mb-3;
       text-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     }
 
     p {
       @apply .text-blue-lightest .mb-8 .pb-3;
       text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      opacity: .75;
+      opacity: .85;
     }
 
     button {
-      width: 200px;
+      width: 225px;
     }
   }
 }
 
 @screen md {
   .hero-content {
-    height: 70%;
+    height: 60%;
 
     h1 {
       @apply .text-6xl;
@@ -53,9 +53,16 @@
 
 @screen lg {
   .hero-content {
-    width: 70%;
+    width: 100%;
+    height: 50%;
     padding-top: 0;
     padding-bottom: 0;
+  }
+}
+
+@screen xl {
+  .hero-content {
+    height: 60%;
   }
 }
 
@@ -67,6 +74,7 @@
   position: relative;
   top: 0;
   right: 0;
+  z-index: 10;
 
   > div {
     display: flex;
@@ -105,17 +113,16 @@
 
 @screen lg {
   .hero {
-    height: calc(100vh - 56px);
+    height: 130vh;
   }
 
   .hero-grid {
-    width: 70%;
+    width: 68%;
     height: 100%;
     display: block;
     position: absolute;
     top: 30%;
     padding: 5px;
-    opacity: .6;
 
     > div {
       transform: rotateY(-32deg) translateY(-6%);
@@ -140,11 +147,5 @@
         display: block;
       }
     }
-  }
-}
-
-@screen xl {
-  .hero-grid {
-    opacity: 1;
   }
 }

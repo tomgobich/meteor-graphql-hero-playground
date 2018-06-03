@@ -5,7 +5,7 @@
   text-transform: uppercase;
 
   &-primary {
-    background-image: linear-gradient(to bottom right, rgba(#0cebeb, .8), rgba(#20e3b2, .8) rgba(#29ffc6, .8));
+    background-image: linear-gradient(to bottom right, rgba(#29ffc6, .9), config('colors.green'));
     box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
     color: config('colors.blue-lightest');
     transition: box-shadow 300ms ease, transform 300ms ease;
